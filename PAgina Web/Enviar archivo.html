@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subir archivo de texto y enviar contenido</title>
+
+    <script>
+        function mostrarContenido() {
+            var fileInput = document.getElementById('archivo');
+            var file = fileInput.files[0];
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                var contenido = e.target.result;
+                sessionStorage.setItem('contenidoArchivo', contenido);
+                enviarContenido(contenido); // Llamar a la función para enviar el contenido
+            };
+
+            reader.readAsText(file);
+        }
+
+        function enviarContenido(contenido) {
+            var messageElement = document.createElement('p'); // Crear un elemento <p> para mostrar el mensaje
+            document.body.appendChild(messageElement); // Agregar el elemento al cuerpo de la página
+
+            // Enviar contenido del archivo a través de una solicitud POST
+            var url = 'https://script.google.com/macros/s/AKfycbx4OhybyTxnyrfl0gZBD7UVtPMlXKuliM4_bIY-GXVduRwSF4Ywt0MtSQmRvjf01CrcrQ/exec'; // Reemplaza con la URL de tu hoja de cálculo
+            var formData = new FormData();
+            formData.append('columna1', contenido);
+            
+            fetch(url, {
+                method: 'POST',
+                body: formData
+            })
+            .then(function(response) {
+                // Manejar la respuesta de la solicitud POST
+                if (response.ok) {
+                    messageElement.textContent = 'Contenido del archivo enviado exitosamente.';
+                } else {
+                    messageElement.textContent = 'Error al enviar el contenido del archivo.';
+                }
+            })
+            .catch(function(error) {
+                messageElement.textContent = 'Error en la solicitud POST: ' + error;
+            });
+        }
+        
+        function PedirAvance() {
+            console.log("Se ha hecho clic en el botón.");   
+            // URL del script de Google Apps Script
+            var scriptUrl = 'https://script.google.com/macros/s/AKfycbzhyA7-li2_mEbGQmF8bA8-YJE-evMOFxLcz24farC0JJgiM2-fcK084o_NPIV4uaXSEw/exec';
+
+            // Realiza la solicitud GET usando la función fetch
+            fetch(scriptUrl)
+                .then(function(response) {
+                    return response.text();
+                })
+                .then(function(data) {
+                console.log("Respuesta del servidor: " + data);
+                var IP = data.replace(/['"]+/g, '');
+                console.log("Respuesta del servidor: " + IP);
+                window.location.href = 'http://' + IP;
+                })
+                .catch(function(error) {
+                console.error("Error en la solicitud GET: " + error);
+                });
+        }
+    </script>
+    
+</head>
+<body>
+    <h1>Subir archivo de texto</h1>    
+    <P>Una vez obtenido el archivo.gcode, cambie la extensión de este a .txt y súbelo</P>
+    <input type="file" id="archivo" accept=".txt">
+    <br><br>
+    <button onclick="mostrarContenido()">Subir</button>
+    <button onclick="PedirAvance()">Ver Avance</button>
+    <br><br>
+</body>
+</html>
