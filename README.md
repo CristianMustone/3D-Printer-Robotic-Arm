@@ -159,6 +159,12 @@ $$theta1 = phi - arctangent(L2 * sine(theta2), L1 + L2 * cosine(theta2))$$
 
 Finally, the angle of arm 1 with respect to the horizontal axis is calculated.
 
+![Primer Paso](Imagenes/First_Step.png)
+![Primer Paso](Imagenes/Second_Step.png)
+![Primer Paso](Imagenes/Third_Step.png)
+![Primer Paso](Imagenes/Fourth_Step.png)
+
+
 With the sequence of end points (15,15); (25,15); (25,25); (15.25) the angles of theta1 and theta2 should be as follows:
 
 ```sh
