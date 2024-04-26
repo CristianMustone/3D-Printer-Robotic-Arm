@@ -166,7 +166,7 @@ Finally, the angle of arm 1 with respect to the horizontal axis is calculated.
 
 Recreating the movement of the robot, the previous sequence of steps would look like:
 
-![video](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/issues/1#issue-2266353641)
+![video](https://drive.google.com/file/d/19XLOZ6fPAICamc3M5XnccYBVRO2wmhf8/view?usp=sharing)
 
 With the sequence of end points (15,15); (25,15); (25,25); (15.25) the angles of theta1 and theta2 should be as follows:
 
