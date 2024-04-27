@@ -168,6 +168,7 @@ Recreating the movement of the robot, the previous sequence of steps would look 
 
 ![video](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/118086095/0ae3cb4a-db7a-4efa-9718-c974cb2a3142)
 
+
 With the sequence of end points (15,15); (25,15); (25,25); (15.25) the angles of theta1 and theta2 should be as follows:
 
 ```sh
