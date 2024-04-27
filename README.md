@@ -166,7 +166,7 @@ Finally, the angle of arm 1 with respect to the horizontal axis is calculated.
 
 Recreating the movement of the robot, the previous sequence of steps would look like:
 
-![video](Prubas/Mover_SCARA.mp4)
+![video](Pruebas/Mover_SCARA.mp4)
 
 With the sequence of end points (15,15); (25,15); (25,25); (15.25) the angles of theta1 and theta2 should be as follows:
 
