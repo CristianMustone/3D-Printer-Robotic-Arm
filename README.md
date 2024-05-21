@@ -60,24 +60,25 @@ This board was selected due to a similar criterion as the ESP32, it provides us 
 It will be constructed constructively from parts made in 3D printing and wood, mainly ignoring the electronic and transmission components, the design will be based on figure 1 with modifications according to the needs.
 The 3D printed parts were designed by ourselves. An approach was taken that with the smallest amount of material possible a part could be generated with the same functionality and that would withstand the conditions to which it was subjected. A 20% infill configuration was used and the material to be used was PLA.
 
-# Software a utilizar
-Se usará lenguaje C para programar los siguientes componentes:
-ESP32: El cual se utilizará para comunicar la página web donde se depositara el código con el ARDUINO UNO.
-ARDUINO UNO: Se utilizará esta placa de desarrollo para la transformación del código recibido por el usuario a uno que el robot pueda utilizar, y además para el comando de los motores a utilizar.
-ESP32 CAM: En este caso se utilizará desde la página web para el seguimiento de la impresión a distancia. 
-También se utilizará una combinación de HTML y CSS para el diseño de la página web.
+# Software to Use
 
-Los pasos a seguir para el funcionamiento completo del proyecto son:
+The following components will be programmed using C language:
+ESP32: This will be used to communicate the webpage where the code is uploaded with the ARDUINO UNO.
+ARDUINO UNO: This development board will be used to transform the code received from the user into one that the robot can use, and also to command the motors to be used.
+ESP32 CAM: This will be used from the webpage for remote monitoring of the printing process.
+A combination of HTML and CSS will also be used for the webpage design.
 
-1. Subida del archivo: Se sube el archivo que se quiere imprimir a la página web. Esta realiza un HTTP POST del contenido del archivo a un archivo de Google sheets. 
-2. Manejo desde Google Sheets: El archivo de Google Sheets está configurado para que cuando recibe un HTTP POST, obtenga todo el contenido que se le ha enviado y lo coloque por línea en la primera columna de la única hoja que se encuentra en el documento. De la misma forma, cuando recibe un HTTP GET, envía toda la información de la primera columna en un solo string, en el cual cada línea está separada por una coma. 
-3. Obtención desde el ESP32: El ESP32 está programado para realizar un HTTP GET al archivo del Google Sheets. Cuando obtiene el string con el código subido, ejecuta una función que elimina todas las líneas innecesarias para el funcionamiento de los motores, ya sean pre configuraciones, manejo del extrusor, etc. 
-4. Envío al ARDUINO UNO: Una vez filtrada toda la información, el ESP32 envía el nuevo string generado a través del puerto serie (TX y RX) hacia el ARDUINO UNO.
-5. Este hace un segundo manejo del string en donde, por cada línea de comando del código, obtiene las posiciones de destino tanto de X como Y. 
-6. Una vez obtenidas las posiciones, manda a llamar a la función que calcula la cantidad de pasos que debe realizar cada motor según nuestro sistema de movimiento.
-7. Calculada la cantidad de pasos, utilizamos otra función que es la que comanda a los motores, haciendo que los mismos se muevan la cantidad de pasos calculados, en el mismo tiempo para los ejes del plano X, Y de tal forma de mantener un movimiento escalonado a travez del vector de desplazamiento.
-8. Uso del ES32 CAM: El código del ESP32 CAM está seteado para funcionar a la inversa del ESP32, este genera una IP para la cámara que está integrada, y realiza un HTTP POST con su dirección IP a otro archivo de Google Sheets. 
-9. Cuando la página web solicita ver el avance de la impresión, realiza primero un HTTP GET al archivo de Google Sheets donde esta la direccion IP de la cámara del ESP32 CAM, para dirigirse a esta y mostrar el video que está filmando el ESP32 CAM con el avance de la impresión. 
+The steps for the complete functioning of the project are as follows:
+
+1. File Upload: The file to be printed is uploaded to the webpage. This performs an HTTP POST of the file's content to a Google Sheets document. 
+2. Handling from Google Sheets: The Google Sheets document is configured to, upon receiving an HTTP POST, capture all the sent content and place it line by line in the first column of its only sheet. Similarly, when it receives an HTTP GET, it sends all the information from the first column as a single string, where each line is separated by a comma.
+3. Retrieval by the ESP32: The ESP32 is programmed to perform an HTTP GET to the Google Sheets document. Upon obtaining the string with the uploaded code, it executes a function to remove all unnecessary lines for motor operation, such as pre-configurations, extruder management, etc.
+4. Sending to ARDUINO UNO: Once all the information is filtered, the ESP32 sends the newly generated string via the serial port (TX and RX) to the ARDUINO UNO.
+5.The ARDUINO UNO performs further processing of the string where, for each command line of the code, it obtains the destination positions for both X and Y.
+6. Once the positions are obtained, it calls a function that calculates the number of steps each motor needs to take according to our movement system.
+7. With the number of steps calculated, we use another function that commands the motors to move the calculated number of steps, synchronously for the X and Y axes to maintain a stepped movement along the displacement vector.
+8. Use of the ESP32 CAM: The ESP32 CAM code is set to work inversely to the ESP32. It generates an IP for the integrated camera and performs an HTTP POST with its IP address to another Google Sheets document.
+9. When the webpage requests to view the printing progress, it first performs an HTTP GET to the Google Sheets document where the IP address of the ESP32 CAM is stored, then it directs to this address to display the video being recorded by the ESP32 CAM showing the printing progress.
 
 ## Explanation of how the code works
 ### Code explanation for the Arduino Uno
