@@ -95,7 +95,7 @@ while (Serial.available() > 0 && MensajeRecibido==0) {
       MensajeRecibido=1;
     }
 ```
-This code fragment is used to enable reading the Serial port of the arduino while waiting for the message sent by the ESP32 with the string that has the lines of code to be executed by the robot.
+Este fragmento de código se utiliza para habilitar la lectura del puerto Serial del Arduino mientras se espera el mensaje enviado por el ESP32 con la cadena que contiene las líneas de código que debe ejecutar el robot.
 
 ``` sh
 void MatrizMovimientos(char texto[]){
@@ -114,7 +114,7 @@ void MatrizMovimientos(char texto[]){
     }
   }
 ```
-Next, the first function to use is to generate the Movement Matrix, that is, a list is created with the final positions of each axis for each line of code received. This generates a list with 3 values in each element, these values being the final positions of (X, Y, Z) .
+A continuación, la primera función a utilizar es generar la Matriz de Movimiento, es decir, se crea una lista con las posiciones finales de cada eje para cada línea de código recibida. Esto genera una lista con 3 valores en cada elemento, siendo estos valores las posiciones finales de (X, Y, Z).
 
 ``` sh
 void moverRobotSCARA(float x, float y) {
@@ -142,37 +142,39 @@ void moverRobotSCARA(float x, float y) {
 }
 ```
 
-In the case of the moveRobotSCARA function, it is the one that transforms the final positions into the number of steps for each motor, only in the case of motors 1 and 2 (that is why it has 2 input values), representatives of the X and Y axes. , since, as they were defined as rotary type axes, a transformation from Cartesian coordinates to polar coordinates is necessary for their use.
-Due to the configuration of the axes, it was decided to use the geometric method to calculate the angles to rotate in each motor in order to make the calculation simpler. We can observe the development of this method in the first lines of the function; converting them to mathematical language they would be:
+En el caso de la función moveRobotSCARA, es la que transforma las posiciones finales en el número de pasos para cada motor, solo en el caso de los motores 1 y 2 (por eso tiene 2 valores de entrada), representativos de los ejes X e Y, ya que, al ser definidos como ejes de tipo rotativo, es necesario realizar una transformación de coordenadas cartesianas a coordenadas polares para su uso.
+
+Debido a la configuración de los ejes, se decidió utilizar el método geométrico para calcular los ángulos a rotar en cada motor con el fin de simplificar el cálculo. Podemos observar el desarrollo de este método en las primeras líneas de la función; al convertirlas a lenguaje matemático serían:
 
 $$ d = x2+ y2 $$
 
-Calculates the distance from the origin to the end point where the extruder is located
+Calcula la distancia desde el origen hasta el punto final donde se encuentra el extrusor.
 
 $$phi = arc tangent (y,x)$$
 
-To calculate the angle at which the end point is with respect to the horizontal axis
+Para calcular el ángulo en el que se encuentra el punto final con respecto al eje horizontal.
 
 $$theta2 = arc cosine((d * d - L1 * L1 - L2 * L2) / (2 * L1 * L2))$$
 
-L1 and L2 represent the lengths of arms 1 and 2 respectively.
-This formula is used to calculate the angle between arm 2 and the continuation of the center line of arm 1.
+L1 y L2 representan las longitudes de los brazos 1 y 2 respectivamente.
+Esta fórmula se utiliza para calcular el ángulo entre el brazo 2 y la prolongación de la línea central del brazo 1.
 
 $$theta1 = phi - arctangent(L2 * sine(theta2), L1 + L2 * cosine(theta2))$$
 
-Finally, the angle of arm 1 with respect to the horizontal axis is calculated.
+Finalmente, se calcula el ángulo del brazo 1 con respecto al eje horizontal.
 
 ![Primer Paso](Imagenes/First_Step.png)
 ![Primer Paso](Imagenes/Second_Step.png)
 ![Primer Paso](Imagenes/Third_Step.png)
 ![Primer Paso](Imagenes/Fourth_Step.png)
 
-Recreating the movement of the robot, the previous sequence of steps would look like:
+
+Recreando el movimiento del robot, la secuencia de pasos anterior se vería así:
 
 ![video](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/118086095/0ae3cb4a-db7a-4efa-9718-c974cb2a3142)
 
 
-With the sequence of end points (15,15); (25,15); (25,25); (15.25) the angles of theta1 and theta2 should be as follows:
+Con la secuencia de puntos finales (15,15); (25,15); (25,25); (15,25) los ángulos de theta1 y theta2 deberían ser los siguientes:
 
 ```sh
   float avanzar1 = ((theta1 - ultimo_step1) * 360)/(2 * PI);
@@ -181,13 +183,16 @@ With the sequence of end points (15,15); (25,15); (25,25); (15.25) the angles of
   int steps1 = avanzar1 / avance_motor;
   int steps2 = avanzar2 / avance_moto
 ```
-Next, the angles that each motor must advance (or retreat) are calculated. This is calculated by converting the calculated angles to geometric degrees, since they are initially found in non-representative values, that is, values that cannot be used as geometric degrees.
-The angle at which the motor is currently located will also be subtracted, reflected in the variables ultimo_step1 and ultimo_step2, which, after each movement, will be updated. For example, if motor counterpart to advance1 but stops motor 2)
-Finally, the number of degrees to move in each motor is divided by the degrees per step of the motor (in this case it would be 1.8 degrees per step, which is stored in the variable advance_motor), obtaining the number of steps to be performed to advance that number of geometric degrees.
+A continuación, se calculan los ángulos que cada motor debe avanzar (o retroceder). Esto se calcula convirtiendo los ángulos calculados a grados geométricos, ya que inicialmente se encuentran en valores no representativos, es decir, valores que no pueden utilizarse como grados geométricos.
+
+También se restará el ángulo en el que se encuentra actualmente el motor, reflejado en las variables "ultimo_step1" y "ultimo_step2", las cuales se actualizarán después de cada movimiento. Por ejemplo, si el motor correspondiente a avanzar1 se detiene pero el motor 2 sigue moviéndose.
+
+Finalmente, el número de grados a mover en cada motor se divide por los grados por paso del motor (en este caso serían 1.8 grados por paso, que se almacena en la variable "advance_motor"), obteniendo así el número de pasos que se deben realizar para avanzar ese número de grados geométricos.
+
 ```sh
 MoverBrazo(steps1, steps2);
 ```
-Once the entire series of calculations is finished, the MoveArm function is called, which is responsible for coordinating the movements of motors 1 and 2 so that they reach their destination at the same time, generating a straight line as a trajectory.
+Una vez que se completa toda la serie de cálculos, se llama a la función MoveArm, que se encarga de coordinar los movimientos de los motores 1 y 2 para que lleguen a su destino al mismo tiempo, generando una trayectoria recta como resultado.
 ```sh
 void MoverBrazo(int pasosX, int pasosY){
   int timeX = 0;
@@ -224,10 +229,12 @@ void MoverBrazo(int pasosX, int pasosY){
   }
 }
 ```
-For motor hands to reach the destination point at the same time, regardless of the number of steps each one must take, there were several possibilities, such as using the Arduino milis library, but in this case it was decided to make a function with a Similar operation but with very short delay.
-The operation of the MoverRoborSCARA function calculates the ratio of steps that motor 1 and 2 must take, once obtained, it affects the delay or internal speed of the motor with fewer steps by that factor, and it is obtained that both motors take the same even if they take a different number of steps. It should be noted that both motors already have a minimum speed for movement, so the factor is always additive.
-Once the time that both motors will take to complete their corresponding steps has been calculated, a for loop is created that iterates for each millisecond of the total calculated, and at the end a delay of 1 millisecond is placed, this will cause each cycle of the loop to be executed every 1 millisecond. This allows us to see if the delay of each motor, that is, the number of milliseconds it takes to take each step, corresponds to the cycle number that is being executed, the motor moves one step. This affects both engines at the same time.
-When you have to move a step regardless of the motor, a conditional is added to know if you have to move clockwise or counterclockwise, it could also be said, if you have to move one step or less one step.
-As you can see, the operation of the Arduino milis library is very similar but with the addition of greater control over the total duration time.
+Para lograr que las manos del motor alcancen el punto de destino al mismo tiempo, independientemente del número de pasos que cada una deba tomar, hubo varias posibilidades, como usar la biblioteca millis de Arduino, pero en este caso se decidió hacer una función con una operación similar pero con un retraso muy corto.
 
+La operación de la función MoverRoborSCARA calcula la proporción de pasos que los motores 1 y 2 deben tomar; una vez obtenida, ajusta el retraso o velocidad interna del motor con menos pasos por ese factor, y se logra que ambos motores avancen al mismo tiempo, aunque tomen un número diferente de pasos. Cabe señalar que ambos motores ya tienen una velocidad mínima para el movimiento, por lo que el factor siempre es aditivo.
 
+Una vez calculado el tiempo que ambos motores tardarán en completar sus pasos correspondientes, se crea un bucle for que itera para cada milisegundo del total calculado, y al final se coloca un retraso de 1 milisegundo; esto hace que cada ciclo del bucle se ejecute cada 1 milisegundo. Esto nos permite ver si el retraso de cada motor, es decir, el número de milisegundos que tarda en dar cada paso, corresponde al número de ciclo que se está ejecutando, y así el motor da un paso. Esto afecta a ambos motores al mismo tiempo.
+
+Cuando se debe mover un paso sin importar el motor, se agrega una condición para saber si se debe mover en sentido horario o antihorario, también podría decirse, si se debe mover un paso o menos un paso.
+
+Como puedes ver, la operación de la biblioteca millis de Arduino es muy similar, pero con el agregado de un mayor control sobre el tiempo total de duración.
