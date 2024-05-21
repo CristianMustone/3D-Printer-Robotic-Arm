@@ -82,9 +82,9 @@ Los pasos a seguir para el funcionamiento completo del proyecto son:
 8. Uso del ES32 CAM: El código del ESP32 CAM está seteado para funcionar a la inversa del ESP32, este genera una IP para la cámara que está integrada, y realiza un HTTP POST con su dirección IP a otro archivo de Google Sheets. 
 9. Cuando la página web solicita ver el avance de la impresión, realiza primero un HTTP GET al archivo de Google Sheets donde esta la direccion IP de la cámara del ESP32 CAM, para dirigirse a esta y mostrar el video que está filmando el ESP32 CAM con el avance de la impresión. 
 
-## Explanation of how the code works
-### Code explanation for the Arduino Uno 
-We are going to stop specifically at this point in order to detail the method of operation of the transformation of the Cartesian positions obtained to the number of steps that each motor must move along with the speed at which they must do so.
+## Explicación de cómo funciona el código
+### Explicación del código para el Arduino Uno
+Nos vamos a detener específicamente en este punto para detallar el método de operación de la transformación de las posiciones cartesianas obtenidas a la cantidad de pasos que cada motor debe moverse junto con la velocidad a la que deben hacerlo.
 ``` sh
 while (Serial.available() > 0 && MensajeRecibido==0) {
     receivedMessage = Serial.readStringUntil('\r');
