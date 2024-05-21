@@ -1,7 +1,5 @@
-![image](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/d415302d-89a4-416e-9a46-9a4953a03750)
-![image](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/fbb305fe-894c-4bb0-bf2c-dd9e59921589)
-
-
+![image](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/52afa1dd-452e-47d1-8668-557313117370)
+![image](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/22f22362-cd1c-4a4e-b18e-6cb2c43ffeb1)
 
 # Brazo robotico de Impresion 3D
 
