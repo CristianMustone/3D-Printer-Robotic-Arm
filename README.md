@@ -1,3 +1,6 @@
+![image](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/c62f0545-4e4e-4184-89a2-f5999eebfcf6)
+![image](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/ca078ac0-604c-4ce6-8e7b-359ef631135e)
+
 # Robotic Arm 3D Printer #
 
 A robotic arm with 3 degrees of freedom will be made, one prismatic and two rotating, with a SCARA – PRR type distribution.
