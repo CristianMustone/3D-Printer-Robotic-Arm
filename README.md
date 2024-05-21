@@ -1,38 +1,40 @@
-#Impresora 3D con Brazo Robótico
+# Brazo robotico de Impresion 3D
 
 
-A robotic arm with 3 degrees of freedom will be made, one prismatic and two rotating, with a SCARA – PRR type distribution.
-The stepper motors corresponding to each degree of freedom will be controlled through an Arduino Uno together with Pololu A4988 controllers.
-A connection function via WIFI will be added with the integration of an ESP32 Cam, which communicates with the Arduino Uno, with which the G code file (.GCODE) of the part to be printed can be sent, and it will begin automatically . Communication between the computer where the G code is located and the ESP32 of the printer will be carried out through the website. With further development, it could be controlled over long distances through web pages, for example.
-In a future application, the printing base could be replaced with a ribbon that withstands the extrusion temperature in order to have a level of serial production higher than most of the machines available on the market.
+Se fabricará un brazo robótico con 3 grados de libertad: uno prismático y dos rotativos, con una distribución de tipo SCARA – PRR. Los motores paso a paso correspondientes a cada grado de libertad serán controlados mediante un Arduino Uno junto con controladores L298N.
 
-## Goals
+Se añadirá una función de conexión vía WIFI con la integración de un ESP32 Cam, que se comunicará con el Arduino Uno. A través de esta conexión, se podrá enviar el archivo de código G (.GCODE) de la pieza a imprimir, y el proceso comenzará automáticamente. La comunicación entre la computadora donde se encuentra el archivo G code y el ESP32 de la impresora se realizará a través de un sitio web. Con un mayor desarrollo, podría ser controlado a larga distancia mediante páginas web, por ejemplo.
 
-This project seeks to design a 3D printing system different from the most common models on the market, such as the 3-axis printer or those with an infinite axis. In addition, it will have greater printing capacity in terms of the size of the prints it can make, since being an instrument widely used today, there is a need to print larger pieces at once.
-It also seeks to improve the human-printer relationship through online communication, either to show the progress of the printing or to attach a new job without having to connect it to a PC or through a compatible memory card.
-Another objective is to be able to build a printer that entails lower manufacturing costs in order to compete with other printers on the market that have a higher price for equal or inferior features.
+En una aplicación futura, la base de impresión podría ser reemplazada por una cinta que soporte la temperatura de extrusión para tener un nivel de producción en serie superior al de la mayoría de las máquinas disponibles en el mercado.
 
-## Summary
 
-A robotic arm with 3 degrees of freedom will be developed, with a configuration of 1 prismatic axis that will be used for the vertical movement of the extruder, and 2 rotary axes in SCARA format.
-The advantage of this configuration is that it gives us a 180° printing area, a reach of 41 cm (base can be modified according to characteristics) and a height of approximately 30 cm. In total it would be a printing area of [Printing area calculation].
-The parts to be used will be made of PLA, since they were designed and printed in 3D, wood, for the supports and components that require greater resistance, and finally the electronic components are integrated.
-The operation is based on sending the file with a .gcode extension that is obtained from any laminator on the market (such as Cura) through a web page, and which can be printed automatically without requiring physical access to the machine. It will also have a camera that can be accessed from the same website to see the progress of the 3D printing made by the arm.
+## Objetivos
 
-## Technical specifications
+Este proyecto busca diseñar un sistema de impresión 3D diferente de los modelos más comunes en el mercado, como las impresoras de 3 ejes o aquellas con un eje infinito. Además, tendrá una mayor capacidad de impresión en términos del tamaño de las piezas que puede fabricar, ya que, siendo un instrumento ampliamente utilizado hoy en día, existe la necesidad de imprimir piezas más grandes de una sola vez.
+También se busca mejorar la relación humano-impresora a través de la comunicación en línea, ya sea para mostrar el progreso de la impresión o para adjuntar un nuevo trabajo sin tener que conectarlo a una PC o mediante una tarjeta de memoria compatible.
+Otro objetivo es poder construir una impresora que implique menores costos de fabricación para competir con otras impresoras en el mercado que tienen un precio más alto por características iguales o inferiores.
 
-- The robotic arm must have an adequate range of motion to cover the minimum print area of 300x300x300.
-- The robotic arm must be equipped with an extrusion tool that can print both PLA and ABS and the head itself must be able to be easily exchanged
-- It must be operated through a Wi-Fi network from a web page with a user-friendly interface which is capable of loading a direct parameterized file to print and be able to initialize the operation as well as be able to see the process in real time through the application.
-- The wireless connection must be stable and secure to guarantee fluid communication between the printer and the application.
-- The structure of the robotic arm must be robust and resistant to ensure stable and safe operation.
-- The manufacturing cost of the robotic arm should be as low as possible without compromising the quality and efficiency of the system.
-- The robotic arm should be easy to disassemble and maintain to facilitate repair and replacement of parts in case of failure.Principle of form
-- The structure must be stable and of simple design that guarantees possible future sizing applications.
+## Resumen
+Se desarrollará un brazo robótico con 3 grados de libertad, con una configuración de 1 eje prismático que se utilizará para el movimiento vertical del extrusor y 2 ejes rotativos en formato SCARA.
+La ventaja de esta configuración es que nos proporciona un área de impresión de 180°, un alcance de 41 cm (la base puede ser modificada según las características) y una altura de aproximadamente 30 cm. En total, sería un área de impresión de [Cálculo del área de impresión].
+Las partes a utilizar estarán hechas de PLA, ya que fueron diseñadas e impresas en 3D, madera, para los soportes y componentes que requieren mayor resistencia, y finalmente se integrarán los componentes electrónicos.
+El funcionamiento se basa en enviar el archivo con extensión .gcode que se obtiene de cualquier laminador en el mercado (como Cura) a través de una página web, y que puede imprimirse automáticamente sin requerir acceso físico a la máquina. También contará con una cámara a la que se podrá acceder desde la misma página web para ver el progreso de la impresión 3D realizada por el brazo.
 
-# Materials
 
-| Material | Quantity |
+## Especificaciones Técnicas
+
+- El brazo robótico debe tener un rango de movimiento adecuado para cubrir un área de impresión mínima de 300x300x300 mm.
+- El brazo robótico debe estar equipado con una herramienta de extrusión que pueda imprimir tanto PLA como ABS, y la cabeza debe ser fácilmente intercambiable.
+- Debe operarse a través de una red Wi-Fi desde una página web con una interfaz fácil de usar, capaz de cargar un archivo parametrizado directamente para imprimir y poder iniciar la operación, así como ver el proceso en tiempo real a través de la aplicación.
+- La conexión inalámbrica debe ser estable y segura para garantizar una comunicación fluida entre la impresora y la aplicación.
+- La estructura del brazo robótico debe ser robusta y resistente para asegurar una operación estable y segura.
+- El costo de fabricación del brazo robótico debe ser lo más bajo posible sin comprometer la calidad y eficiencia del sistema.
+- El brazo robótico debe ser fácil de desarmar y mantener para facilitar la reparación y el reemplazo de piezas en caso de falla.
+- La estructura debe ser estable y de diseño simple que garantice posibles aplicaciones de dimensionamiento futuro.
+
+# Materiales
+
+| Material | Cantidad |
 |---|:---:|
 | L298N | x3 |
 | Stepper NEMA 17 |        x3|
@@ -40,26 +42,26 @@ The operation is based on sending the file with a .gcode extension that is obtai
 | Arduino Uno |            x1|
 | ESP32      |             x1|
 | ESP32 CAM |              x1|
-| Wood |
-| Power Supply 12v / 5v |
-| Pencil 3D Printer |      x1|
-| Threaded Rod |           x1|
+| Madera |
+| Fuente de poder 12v / 5v |x1|
+| Lapiz de impresion 3d    |x1|
+| Varilla roscada |           x1|
 
-## Selection criteria for each material
+## Criterio de selección de materiales
 
 ### ARDUINO UNO
-The Arduino was selected as the motherboard for the movement of the motors due to the large number of libraries that can be found on the market for this type of boards, in addition to the ease they provide when programming the movement sequence.
-The ESP32 or the ESP32 CAM was not used directly since, although the libraries can be adapted to this type of boards, the use of Wi-Fi required multiple use of pins to connect to the Internet and also move the motors, which generated unwanted signals that produced unwanted movements in the motors or their non-functioning at all.
+El Arduino fue seleccionado como la placa base para el movimiento de los motores debido a la gran cantidad de bibliotecas disponibles en el mercado para este tipo de placas, además de la facilidad que proporcionan al programar la secuencia de movimiento. No se utilizó directamente el ESP32 o el ESP32 CAM, ya que, aunque las bibliotecas pueden adaptarse a este tipo de placas, el uso de Wi-Fi requería el uso múltiple de pines para conectarse a Internet y mover los motores, lo que generaba señales no deseadas que producían movimientos indeseados en los motores o su mal funcionamiento.
 
 ### ESP32
-This board was selected since it offers us the possibility of connecting to the Internet through an integrated Wi-Fi connection without the need to incorporate integrated devices.
+Esta placa fue seleccionada porque nos ofrece la posibilidad de conectarnos a Internet a través de una conexión Wi-Fi integrada sin la necesidad de incorporar dispositivos adicionales.
 
 ### ESP32 CAM
-This board was selected due to a similar criterion as the ESP32, it provides us with an integrated camera capable of transmitting video via Wi-Fi without a physical connection to the equipment through an IP address of the device.
+Esta placa fue seleccionada por un criterio similar al del ESP32, ya que nos proporciona una cámara integrada capaz de transmitir video vía Wi-Fi sin una conexión física al equipo a través de una dirección IP del dispositivo.
 
-## Design Specifications
-It will be constructed constructively from parts made in 3D printing and wood, mainly ignoring the electronic and transmission components, the design will be based on figure 1 with modifications according to the needs.
-The 3D printed parts were designed by ourselves. An approach was taken that with the smallest amount of material possible a part could be generated with the same functionality and that would withstand the conditions to which it was subjected. A 20% infill configuration was used and the material to be used was PLA.
+## Especificaciones de Diseño
+Se construirá principalmente a partir de piezas hechas en impresión 3D y madera, dejando de lado los componentes electrónicos y de transmisión. El diseño se basará en la figura 1, con modificaciones según las necesidades.
+
+Las piezas impresas en 3D fueron diseñadas por nosotros mismos. Se adoptó un enfoque que permitiera generar una pieza con la misma funcionalidad utilizando la menor cantidad de material posible y que soportara las condiciones a las que estaría sometida. Se utilizó una configuración de 20% de relleno y el material seleccionado fue PLA.
 
 # Software a utilizar
 Se usará lenguaje C para programar los siguientes componentes:
@@ -81,7 +83,7 @@ Los pasos a seguir para el funcionamiento completo del proyecto son:
 9. Cuando la página web solicita ver el avance de la impresión, realiza primero un HTTP GET al archivo de Google Sheets donde esta la direccion IP de la cámara del ESP32 CAM, para dirigirse a esta y mostrar el video que está filmando el ESP32 CAM con el avance de la impresión. 
 
 ## Explanation of how the code works
-### Code explanation for the Arduino Uno
+### Code explanation for the Arduino Uno 
 We are going to stop specifically at this point in order to detail the method of operation of the transformation of the Cartesian positions obtained to the number of steps that each motor must move along with the speed at which they must do so.
 ``` sh
 while (Serial.available() > 0 && MensajeRecibido==0) {
