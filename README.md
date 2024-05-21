@@ -1,7 +1,7 @@
 # Robotic Arm 3D Printer #
 
 A robotic arm with 3 degrees of freedom will be made, one prismatic and two rotating, with a SCARA – PRR type distribution.
-The stepper motors corresponding to each degree of freedom will be controlled through an Arduino Uno together with Pololu A4988 controllers.
+The stepper motors corresponding to each degree of freedom will be controlled through an Arduino Uno together with L298N controllers.
 A connection function via WIFI will be added with the integration of an ESP32 Cam, which communicates with the Arduino Uno, with which the G code file (.GCODE) of the part to be printed can be sent, and it will begin automatically . Communication between the computer where the G code is located and the ESP32 of the printer will be carried out through the website. With further development, it could be controlled over long distances through web pages, for example.
 In a future application, the printing base could be replaced with a ribbon that withstands the extrusion temperature in order to have a level of serial production higher than most of the machines available on the market.
 
