@@ -1,4 +1,4 @@
-# Robotic Arm 3D Printer #
+# Robotic Arm 3D Printer # prueba
 
 A robotic arm with 3 degrees of freedom will be made, one prismatic and two rotating, with a SCARA – PRR type distribution.
 The stepper motors corresponding to each degree of freedom will be controlled through an Arduino Uno together with Pololu A4988 controllers.
