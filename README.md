@@ -1,6 +1,6 @@
 ![image](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/c62f0545-4e4e-4184-89a2-f5999eebfcf6)
 ![image](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/ca078ac0-604c-4ce6-8e7b-359ef631135e)
-![image](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/47c41f6e-e017-4db5-8b47-3a9b660c1ae1)
+
 
 
 
