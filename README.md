@@ -1,6 +1,38 @@
-![image](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/52afa1dd-452e-47d1-8668-557313117370)
-![image](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/22f22362-cd1c-4a4e-b18e-6cb2c43ffeb1)
-![video](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/blob/785c0f15e5ba6de790ee7cee0f59c768cc939d11/Pruebas/robot.gif)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Links</title>
+    <style>
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .row img {
+            margin: 0 10px; /* Espaciado entre las imágenes */
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div class="row">
+            <img src="https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/52afa1dd-452e-47d1-8668-557313117370" alt="Image 1">
+            <img src="https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/22f22362-cd1c-4a4e-b18e-6cb2c43ffeb1" alt="Image 2">
+        </div>
+        <div>
+            <img src="https://github.com/CristianMustone/3D-Printer-Robotic-Arm/blob/785c0f15e5ba6de790ee7cee0f59c768cc939d11/Pruebas/robot.gif" alt="Video">
+        </div>
+    </div>
+</body>
+</html>
 # Brazo robotico de Impresion 3D
 
 
