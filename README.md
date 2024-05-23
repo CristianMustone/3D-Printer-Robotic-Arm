@@ -1,6 +1,6 @@
 ![image](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/c62f0545-4e4e-4184-89a2-f5999eebfcf6)
 ![image](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/ca078ac0-604c-4ce6-8e7b-359ef631135e)
-Pruebas/robot.gif
+[Pruebas/robot.gif](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/blob/c786c73459fcbc75f51f0c68e448449f7773f9c8/Pruebas/robot.gif)
 
 
 # Robotic Arm 3D Printer #
