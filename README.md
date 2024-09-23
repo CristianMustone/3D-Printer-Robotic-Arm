@@ -3,12 +3,12 @@
 
 <table>
   <tr>
-    <td><img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen 1" width="50%" aling-content="center"/></td>
-    <td><img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen 2" width="50%"/></td>
+    <td><img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen 1" width="100%"/></td>
+    <td><img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen 2" width="100%"/></td>
   </tr>
   <tr>
-    <td><img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen 3" width="50%"/></td>
-    <td><img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen 4" width="50%"/></td>
+    <td><img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen 3" width="100%"/></td>
+    <td><img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen 4" width="100%"/></td>
   </tr>
 </table>
 
