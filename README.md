@@ -1,17 +1,6 @@
 ![image](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/c62f0545-4e4e-4184-89a2-f5999eebfcf6)
 ![image](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/ca078ac0-604c-4ce6-8e7b-359ef631135e)
 
-<table>
-  <tr>
-    <td><img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen 1" width="100%"/></td>
-    <td><img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen 2" width="100%"/></td>
-  </tr>
-  <tr>
-    <td><img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen 3" width="100%"/></td>
-    <td><img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen 4" width="100%"/></td>
-  </tr>
-</table>
-
 
 # Robotic Arm 3D Printer #
 
@@ -19,6 +8,25 @@ A robotic arm with 3 degrees of freedom will be made, one prismatic and two rota
 The stepper motors corresponding to each degree of freedom will be controlled through an Arduino Uno together with L298N controllers.
 A connection function via WIFI will be added with the integration of an ESP32 Cam, which communicates with the Arduino Uno, with which the G code file (.GCODE) of the part to be printed can be sent, and it will begin automatically . Communication between the computer where the G code is located and the ESP32 of the printer will be carried out through the website. With further development, it could be controlled over long distances through web pages, for example.
 In a future application, the printing base could be replaced with a ribbon that withstands the extrusion temperature in order to have a level of serial production higher than most of the machines available on the market.
+
+<table>
+  <tr>
+    <td><img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen 1" width="100%"/></td>
+    <td><img src="Imagenes/PXL_20240920_194532393.jpg" alt="Imagen 2" width="100%"/></td>
+  </tr>
+  <tr>
+    <td><img src="Imagenes/PXL_20240920_194539764.jpg" alt="Imagen 3" width="100%"/></td>
+    <td><img src="Imagenes/PXL_20240920_194555771.jpg" alt="Imagen 4" width="100%"/></td>
+  </tr>
+  <tr>
+    <td><img src="Imagenes/PXL_20240920_194620795.jpg" alt="Imagen 3" width="100%"/></td>
+    <td><img src="Imagenes/PXL_20240920_194623641.jpg" alt="Imagen 4" width="100%"/></td>
+  </tr>
+  <tr>
+    <td><img src="Imagenes/PXL_20240920_194633619.jpg" alt="Imagen 3" width="100%"/></td>
+    <td><img src="Imagenes/PXL_20240920_194705506.MV.jpg" alt="Imagen 4" width="100%"/></td>
+  </tr>
+</table>
 
 ## Goals
 
