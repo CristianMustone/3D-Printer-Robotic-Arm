@@ -1,13 +1,16 @@
 ![image](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/c62f0545-4e4e-4184-89a2-f5999eebfcf6)
 ![image](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/ca078ac0-604c-4ce6-8e7b-359ef631135e)
-<div  styles ="block: inline">
-<img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen" width="50%"/>
-<img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen" width="50%"/>
-<img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen" width="50%"/>
-<img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen" width="50%"/>
-</div>
 
-
+<table>
+  <tr>
+    <td><img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen 1" width="200"/></td>
+    <td><img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen 2" width="200"/></td>
+  </tr>
+  <tr>
+    <td><img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen 3" width="200"/></td>
+    <td><img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen 4" width="200"/></td>
+  </tr>
+</table>
 
 
 # Robotic Arm 3D Printer #
