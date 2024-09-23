@@ -1,7 +1,7 @@
 ![image](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/c62f0545-4e4e-4184-89a2-f5999eebfcf6)
 ![image](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/ca078ac0-604c-4ce6-8e7b-359ef631135e)
 
-<table>
+<table styles="aling-content: center">
   <tr>
     <td><img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen 1" width="50%"/></td>
     <td><img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen 2" width="50%"/></td>
