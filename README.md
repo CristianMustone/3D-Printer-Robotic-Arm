@@ -1,10 +1,10 @@
 ![image](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/c62f0545-4e4e-4184-89a2-f5999eebfcf6)
 ![image](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/ca078ac0-604c-4ce6-8e7b-359ef631135e)
 
-![Foto](Imagenes/PXL_20240920_194527462.jpg)
-![Foto](Imagenes/PXL_20240920_194532393.jpg)
-
-<img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen" width="50%"/>
+<img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen" width="50%" styles ="block: inline;"/>
+<img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen" width="50%" styles ="block: inline;"/>
+<img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen" width="50%" styles ="block: inline;"/>
+<img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen" width="50%" styles ="block: inline;"/>
 
 
 
