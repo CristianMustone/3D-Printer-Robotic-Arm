@@ -4,6 +4,9 @@
 ![Foto](Imagenes/PXL_20240920_194527462.jpg)
 ![Foto](Imagenes/PXL_20240920_194532393.jpg)
 
+<img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen" width="50%"/>
+
+
 
 
 # Robotic Arm 3D Printer #
