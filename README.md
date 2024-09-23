@@ -12,15 +12,11 @@ In a future application, the printing base could be replaced with a ribbon that 
 <table>
   <tr>
     <td><img src="Imagenes/PXL_20240920_194527462.jpg" alt="Imagen 1" width="100%"/></td>
-    <td><img src="Imagenes/PXL_20240920_194532393.jpg" alt="Imagen 2" width="100%"/></td>
+    <td><img src="Imagenes/PXL_20240920_194620795.jpg" alt="Imagen 3" width="100%"/></td>
   </tr>
   <tr>
     <td><img src="Imagenes/PXL_20240920_194539764.jpg" alt="Imagen 3" width="100%"/></td>
     <td><img src="Imagenes/PXL_20240920_194555771.jpg" alt="Imagen 4" width="100%"/></td>
-  </tr>
-  <tr>
-    <td><img src="Imagenes/PXL_20240920_194620795.jpg" alt="Imagen 3" width="100%"/></td>
-    <td><img src="Imagenes/PXL_20240920_194623641.jpg" alt="Imagen 4" width="100%"/></td>
   </tr>
   <tr>
     <td><img src="Imagenes/PXL_20240920_194633619.jpg" alt="Imagen 3" width="100%"/></td>
