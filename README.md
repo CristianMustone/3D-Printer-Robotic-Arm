@@ -2,6 +2,7 @@
 ![image](https://github.com/CristianMustone/3D-Printer-Robotic-Arm/assets/167147147/ca078ac0-604c-4ce6-8e7b-359ef631135e)
 
 ![Foto](Imagenes/PXL_20240920_194527462.jpg)
+![Foto](Imagenes/PXL_20240920_194532393.jpg)
 
 
 
